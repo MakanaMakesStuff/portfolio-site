@@ -1,1 +1,1 @@
-const s="/portfolio-site/assets/1.f3a14447.jpg";export{s as default};
+const e=""+new URL("1.f3a14447.jpg",import.meta.url).href;export{e as default};
