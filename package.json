@@ -1,0 +1,28 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --port 8000",
+    "sass": "sass"
+  },
+  "dependencies": {
+    "@vueuse/head": "^0.7.6",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.4",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "sass": "^1.53.0",
+    "typescript": "^4.7.4",
+    "unplugin-vue-components": "^0.21.1",
+    "vite": "^3.0.0",
+    "vite-plugin-pages": "^0.25.0",
+    "vite-plugin-vue-layouts": "^0.6.0",
+    "vue-tsc": "^0.38.4"
+  }
+}

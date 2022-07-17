@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@client/*": ["./*"]
+    },
+    "target": "esnext",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "strict": true,
+    "sourceMap": true,
+    "useDefineForClassFields": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "include": [
+    "components.d.ts",
+    "components/**/*",
+    "components/**/*.vue",
+    "pages/**/*.vue",
+    "env.d.ts",
+    "render.ts",
+    "vite.d.ts",
+    "**/*.ts"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
