@@ -19,30 +19,78 @@ import sushi from "@client/assets/images/interests/sushi.gif"
 import me2 from "@client/assets/images/me2.jpg"
 import jeff from "@client/assets/images/jeff.jpg"
 
+//Code Images
+import aws from "@client/assets/images/codeimages/aws.png"
+import heroku from "@client/assets/images/codeimages/heroku.png"
+import node from "@client/assets/images/codeimages/node.png"
+import trio from "@client/assets/images/codeimages/trio.png"
+import typeorm from "@client/assets/images/codeimages/typeorm.png"
+import vuejs from "@client/assets/images/codeimages/vuejs.png"
+
+//Owl Images
+import owl1 from "@client/assets/images/owls/1.jpg"
+import owl2 from "@client/assets/images/owls/2.jpg"
+import owl3 from "@client/assets/images/owls/3.jpg"
+import owl4 from "@client/assets/images/owls/4.jpg"
+
 export default defineComponent({
   name: "IndexPage",
 })
 </script>
 
 <script setup lang="ts">
-const codeImages = computed(() => {
-  const imgs = import.meta.glob("../assets/images/codeimages/*.png")
-  const res = Object.entries(imgs).map((item) => item[0])
-  return res
-})
-
-const owls = computed(() => {
-  const imgs = import.meta.glob("../assets/images/owls/*.jpg")
-  const res = Object.entries(imgs).map((item) => item[0])
-  return res
-})
-
 const typeout = useTypeout()
 const transition = useTransition(".public-project")
 const interest = useTransition(".interest")
 const cards = useTransition(".public-user-card")
 const contact = useTransition(".contact")
 const submitted = ref(false)
+
+const codeImages = [
+  {
+    src: aws,
+    alt: "AWS",
+  },
+  {
+    src: heroku,
+    alt: "Heroku",
+  },
+  {
+    src: node,
+    alt: "Node",
+  },
+  {
+    src: trio,
+    alt: "Trio",
+  },
+  {
+    src: typeorm,
+    alt: "TypeORM",
+  },
+  {
+    src: vuejs,
+    alt: "VueJS",
+  },
+]
+
+const owls = [
+  {
+    src: owl1,
+    alt: "Owl 1",
+  },
+  {
+    src: owl2,
+    alt: "Owl 2",
+  },
+  {
+    src: owl3,
+    alt: "Owl 3",
+  },
+  {
+    src: owl4,
+    alt: "Owl 4",
+  },
+]
 
 function loopTimer() {
   typeout.start(".typeout-text", 100)
@@ -131,9 +179,9 @@ onMounted(() => {
       <div class="middle">
         <img
           v-for="img of codeImages"
-          :key="img"
-          :src="img"
-          alt="Logo of code library"
+          :key="img.alt"
+          :src="img.src"
+          :alt="img.alt"
         />
       </div>
     </PublicSplashSection>
@@ -195,11 +243,7 @@ onMounted(() => {
 
         <template #right>
           <div class="gallery">
-            <img
-              v-for="(owl, i) of owls"
-              :src="owl"
-              :alt="`Image of owl number ${i}`"
-            />
+            <img v-for="owl of owls" :src="owl.src" :alt="owl.alt" />
           </div>
         </template>
       </PublicProject>

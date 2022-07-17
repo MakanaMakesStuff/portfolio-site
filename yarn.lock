@@ -38,6 +38,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@brillout/json-s@npm:^0.4.6":
+  version: 0.4.6
+  resolution: "@brillout/json-s@npm:0.4.6"
+  checksum: 72fff416de6676fcc421d554d1351b2b1ffde1419392e4d533ceb8fd4bcede3ce0da2fdb1df90402dbfa9bea889dc10e918cab4a12e6c51fa217defc0e6b0814
+  languageName: node
+  linkType: hard
+
+"@brillout/libassert@npm:^0.5.8":
+  version: 0.5.8
+  resolution: "@brillout/libassert@npm:0.5.8"
+  checksum: 44f9c32ce5c2b9caa5c5f33d69456888ba2d3c632a1ec1f9c0f61c4842737a849a9c38577e0d0790841e107f978842f0f6fa54ad98144a4efd111ff46f3f0429
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -312,6 +326,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@zkochan/rimraf@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@zkochan/rimraf@npm:2.1.2"
+  dependencies:
+    rimraf: ^3.0.2
+  checksum: 4f7fbfe837b7957bd33b12ce3d41639c737be115122fcad9ce3a96cf02c47da6f4b9be06f9efef2c7f5d94a401a96d593fe07be1d9f181b70437e844f2f211c3
+  languageName: node
+  linkType: hard
+
 "abbrev@npm:1":
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
@@ -406,6 +429,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"better-path-resolve@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "better-path-resolve@npm:1.0.0"
+  dependencies:
+    is-windows: ^1.0.0
+  checksum: 5392dbe04e7fe68b944eb37961d9dfa147aaac3ee9ee3f6e13d42e2c9fbe949e68d16e896c14ee9016fa5f8e6e53ec7fd8b5f01b50a32067a7d94ac9cfb9a050
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
@@ -438,6 +470,13 @@ __metadata:
   dependencies:
     fill-range: ^7.0.1
   checksum: e2a8e769a863f3d4ee887b5fe21f63193a891c68b612ddb4b68d82d1b5f3ff9073af066c343e9867a393fe4c2555dcb33e89b937195feb9c1613d259edfcd459
+  languageName: node
+  linkType: hard
+
+"cac@npm:^6.7.12":
+  version: 6.7.12
+  resolution: "cac@npm:6.7.12"
+  checksum: c0d4129eb30fc43449e9078ac37bb3b837aab6261236a6642a6fb9d839bb6a41e191e1f2776f87569535db07dcbf4937680419126215b4c17c9dba4351d1bd5e
   languageName: node
   linkType: hard
 
@@ -522,6 +561,7 @@ __metadata:
     unplugin-vue-components: ^0.21.1
     vite: ^3.0.0
     vite-plugin-pages: ^0.25.0
+    vite-plugin-ssr: ^0.4.9
     vite-plugin-vue-layouts: ^0.6.0
     vue: ^3.2.37
     vue-router: ^4.1.2
@@ -559,7 +599,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
+"debug@npm:4, debug@npm:4.3.4, debug@npm:^4.1.0, debug@npm:^4.3.2, debug@npm:^4.3.3, debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -692,6 +732,13 @@ __metadata:
     is-string: ^1.0.5
     isarray: ^2.0.5
   checksum: f75e66acb6a45686fa08b3ade9c9421a70d36a0c43ed4363e67f4d7aab2226cb73dd977cb48abbaf75721b946d3cd810682fcf310c7ad0867802fbf929b17dcf
+  languageName: node
+  linkType: hard
+
+"es-module-lexer@npm:^0.10.5":
+  version: 0.10.5
+  resolution: "es-module-lexer@npm:0.10.5"
+  checksum: d2f9debd9d913323322095934653e0558bb8220177645eb76d316b4afd911e8d83ffee0b748b0faa9f3ce1560db3eee4a0ac68d6c2f750c11f4250adce84cf02
   languageName: node
   linkType: hard
 
@@ -1497,6 +1544,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-windows@npm:^1.0.0":
+  version: 1.0.2
+  resolution: "is-windows@npm:1.0.2"
+  checksum: 438b7e52656fe3b9b293b180defb4e448088e7023a523ec21a91a80b9ff8cdb3377ddb5b6e60f7c7de4fa8b63ab56e121b6705fe081b3cf1b828b0a380009ad7
+  languageName: node
+  linkType: hard
+
 "isarray@npm:^2.0.5":
   version: 2.0.5
   resolution: "isarray@npm:2.0.5"
@@ -1517,6 +1571,13 @@ __metadata:
   bin:
     json5: lib/cli.js
   checksum: 74b8a23b102a6f2bf2d224797ae553a75488b5adbaee9c9b6e5ab8b510a2fc6e38f876d4c77dea672d4014a44b2399e15f2051ac2b37b87f74c0c7602003543b
+  languageName: node
+  linkType: hard
+
+"kolorist@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "kolorist@npm:1.5.1"
+  checksum: c113be08834fc03a24699612141c79879fceba9ff9765ad500507fb594ee4fa3465a3453ea90bbc9b0dd82f7ba5dbd79814da28e9ebaf8da27266a0088ba2714
   languageName: node
   linkType: hard
 
@@ -1552,7 +1613,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.26.2":
+"magic-string@npm:^0.26.1, magic-string@npm:^0.26.2":
   version: 0.26.2
   resolution: "magic-string@npm:0.26.2"
   dependencies:
@@ -1592,7 +1653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.4, micromatch@npm:^4.0.5":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -1824,6 +1885,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"p-limit@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "p-limit@npm:3.1.0"
+  dependencies:
+    yocto-queue: ^0.1.0
+  checksum: 7c3690c4dbf62ef625671e20b7bdf1cbc9534e83352a2780f165b0d3ceba21907e77ad63401708145ca4e25bfc51636588d89a8c0aeb715e6c37d1c066430360
+  languageName: node
+  linkType: hard
+
 "p-map@npm:^4.0.0":
   version: 4.0.0
   resolution: "p-map@npm:4.0.0"
@@ -1934,7 +2004,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@npm:^1.22.1":
+"rename-overwrite@npm:^4.0.0":
+  version: 4.0.2
+  resolution: "rename-overwrite@npm:4.0.2"
+  dependencies:
+    "@zkochan/rimraf": ^2.1.2
+  checksum: 9a6466a1b6c24b6452757c3295d7223183c561706b46e6a2b02908c2b4404158de57971ce8ad6ca6d5301ef69cac99b60750d1c01d86f60b94e2eef3682b718a
+  languageName: node
+  linkType: hard
+
+"resolve@npm:^1.22.0, resolve@npm:^1.22.1":
   version: 1.22.1
   resolution: "resolve@npm:1.22.1"
   dependencies:
@@ -1947,7 +2026,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
+"resolve@patch:resolve@^1.22.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
   resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
@@ -2187,6 +2266,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"symlink-dir@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "symlink-dir@npm:5.0.1"
+  dependencies:
+    better-path-resolve: ^1.0.0
+    rename-overwrite: ^4.0.0
+  bin:
+    symlink-dir: dist/cli.js
+  checksum: 73694291cb357c07eb60241d509c6faa2350a4bccfa5b5278101d3d7b7bfa9ad7a3884ada5d11920aece59a1af4e43ba99c4c1bad845c2901f7bcf0a0bea9e32
+  languageName: node
+  linkType: hard
+
 "tar@npm:^6.1.11, tar@npm:^6.1.2":
   version: 6.1.11
   resolution: "tar@npm:6.1.11"
@@ -2234,6 +2325,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
+  languageName: node
+  linkType: hard
+
+"ufo@npm:^0.8.3":
+  version: 0.8.5
+  resolution: "ufo@npm:0.8.5"
+  checksum: 4dcf657a906550112ab1eb045110ebb768a914fb653373a2c363776a1f6ba25ea9d20bd5ed7f4bb44fb72bd4421b37d62991cd5ce4e3a2aef7e3eae450bb9508
   languageName: node
   linkType: hard
 
@@ -2324,6 +2422,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vite-plugin-dist-importer@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "vite-plugin-dist-importer@npm:0.3.2"
+  checksum: 6c931df87928252a4f1deeba34562e5511aa3f3ed7be5648ec7818bc78992d27ee955eb5c7a47d13c0c704d692d94a093b428e6dd609f4311fb71b066c50dc43
+  languageName: node
+  linkType: hard
+
+"vite-plugin-glob@npm:0.2.8":
+  version: 0.2.8
+  resolution: "vite-plugin-glob@npm:0.2.8"
+  dependencies:
+    acorn: ^8.7.1
+    fast-glob: ^3.2.11
+    magic-string: ^0.26.1
+    micromatch: ^4.0.5
+    ufo: ^0.8.3
+  checksum: acf0a9d420dbec52dd8c4028da580d023e8c56d4a1f8ad6fd26a59a1b3b8cf8e34e9593d948b8c5688a75493c3bc50c858be9706b6d2ce6925fff63b12cdb4de
+  languageName: node
+  linkType: hard
+
 "vite-plugin-pages@npm:^0.25.0":
   version: 0.25.0
   resolution: "vite-plugin-pages@npm:0.25.0"
@@ -2344,6 +2462,31 @@ __metadata:
     "@vue/compiler-sfc":
       optional: true
   checksum: bcfe875745078a20277f9b8d82469f9bb4db81cf3f27f02770bfbb56ce16d08fae48a2382f92e8102aafb529f2cee0accb19a41edd2d36fe4e5453f20ee91901
+  languageName: node
+  linkType: hard
+
+"vite-plugin-ssr@npm:^0.4.9":
+  version: 0.4.9
+  resolution: "vite-plugin-ssr@npm:0.4.9"
+  dependencies:
+    "@brillout/json-s": ^0.4.6
+    "@brillout/libassert": ^0.5.8
+    cac: ^6.7.12
+    debug: 4.3.4
+    es-module-lexer: ^0.10.5
+    fast-glob: ^3.2.11
+    kolorist: ^1.5.1
+    p-limit: ^3.1.0
+    picocolors: ^1.0.0
+    resolve: ^1.22.0
+    symlink-dir: ^5.0.1
+    vite-plugin-dist-importer: ^0.3.2
+    vite-plugin-glob: 0.2.8
+  peerDependencies:
+    vite: ">=2.9.10"
+  bin:
+    vite-plugin-ssr: node/bin/vite-plugin-ssr.js
+  checksum: abdb965125c6153adbd9198566eccfcd03777622a2351eaa1b46f260bbe115b07b4f3ce86361e9c5a2eb10a41b07214e0438bac557f4a15abe66c2bb5032614d
   languageName: node
   linkType: hard
 
@@ -2522,5 +2665,12 @@ __metadata:
   version: 2.1.1
   resolution: "yaml@npm:2.1.1"
   checksum: f48bb209918aa57cfaf78ef6448d1a1f8187f45c746f933268b7023dc59e5456004611879126c9bb5ea55b0a2b1c2b392dfde436931ece0c703a3d754562bb96
+  languageName: node
+  linkType: hard
+
+"yocto-queue@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "yocto-queue@npm:0.1.0"
+  checksum: f77b3d8d00310def622123df93d4ee654fc6a0096182af8bd60679ddcdfb3474c56c6c7190817c84a2785648cdee9d721c0154eb45698c62176c322fb46fc700
   languageName: node
   linkType: hard
