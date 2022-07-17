@@ -1,0 +1,7 @@
+{
+  "version": "0.4.9",
+  "usesClientRouter": false,
+  "baseUrl": "/portfolio-site/",
+  "baseAssets": null,
+  "includeAssetsImportedByServer": true
+}
