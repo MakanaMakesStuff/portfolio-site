@@ -14,11 +14,11 @@ useHead({
     {
       rel: "preload",
       as: "style",
-      href: "/assets/fontawesome/css/all.min.css",
+      href: "./css/fontawesome/css/all.min.css",
     },
     {
       rel: "stylesheet",
-      href: "/assets/fontawesome/css/all.min.css",
+      href: "./css/fontawesome/css/all.min.css",
     },
   ],
 })

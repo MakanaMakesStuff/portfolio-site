@@ -12,7 +12,7 @@ useHead({
   link: [
     {
       rel: "stylesheet",
-      href: "/assets/styles/global.css",
+      href: "./css/global.css",
     },
   ],
 })
