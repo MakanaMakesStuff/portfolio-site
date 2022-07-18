@@ -4,7 +4,6 @@ import path from "path"
 import Pages from "vite-plugin-pages"
 import Layouts from "vite-plugin-vue-layouts"
 import Components from "unplugin-vue-components/vite"
-import { ssr } from "vite-plugin-ssr/plugin"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,8 +21,6 @@ export default defineConfig({
     },
   },
 
-  base: "/portfolio-site/",
-
   build: {
     outDir: "./dist",
     emptyOutDir: true,
@@ -31,7 +28,6 @@ export default defineConfig({
 
   plugins: [
     vue(),
-    ssr({ prerender: true }),
     Pages({
       dirs: "pages",
       routeStyle: "nuxt",
@@ -48,4 +44,6 @@ export default defineConfig({
       deep: true,
     }),
   ],
+
+  base: "/portfolio-site/",
 })

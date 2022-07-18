@@ -11,7 +11,7 @@ const layouts = setupLayouts(routes)
 const head = createHead()
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/"),
   routes: layouts,
 })
 
