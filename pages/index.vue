@@ -32,6 +32,7 @@ import owl1 from "@client/assets/images/owls/1.jpg"
 import owl2 from "@client/assets/images/owls/2.jpg"
 import owl3 from "@client/assets/images/owls/3.jpg"
 import owl4 from "@client/assets/images/owls/4.jpg"
+import date from "@client/plugins/date"
 
 export default defineComponent({
   name: "IndexPage",
@@ -110,16 +111,19 @@ function submittedForm() {
   setTimeout(() => (submitted.value = false), 3000)
 }
 
+const gallery = ref()
+const interests = ref()
+
 onMounted(() => {
-  const mosaic = useMosaic(".gallery")
-  const interests = useMosaic(".interests")
+  const mosaic = useMosaic(gallery.value)
+  const inter = useMosaic(interests.value)
 
   mosaic.Sort(2, 3)
-  interests.Sort(3, 4)
+  inter.Sort(3, 4)
 
   setTimeout(() => {
     mosaic.Sort(2, 3, 7)
-    interests.Sort(3, 4)
+    inter.Sort(3, 4)
   }, 100)
 
   loopTimer()
@@ -128,24 +132,38 @@ onMounted(() => {
 
   window.addEventListener("load", () => {
     if (window.innerWidth < 800) {
-      interests.Sort(2, 4)
+      inter.Sort(2, 4)
     }
   })
 
   window.addEventListener("resize", () => {
     if (window.innerWidth < 800) {
-      interests.Sort(2, 4)
+      inter.Sort(2, 4)
     }
   })
 })
+
+function getYears() {
+  const birthdate = date("10/11/1996")
+
+  const today = date()
+
+  const diff = date.duration(date(today).diff(birthdate))
+
+  return Math.floor(diff.asYears())
+}
+
+const year = date().get("year")
 </script>
 
 <template>
   <Page class="index-page" id="home">
     <div class="info">
       <div class="left">
-        <h1>Makanaokeakua Edwards, 25</h1>
+        <h1>Makanaokeakua Edwards, {{ getYears() }}</h1>
+
         <h2>Software Engineer</h2>
+
         <span
           >Creating professional and insightful solutions to real world
           problems.</span
@@ -242,7 +260,7 @@ onMounted(() => {
         </template>
 
         <template #right>
-          <div class="gallery">
+          <div class="gallery" ref="gallery">
             <img v-for="owl of owls" :src="owl.src" :alt="owl.alt" />
           </div>
         </template>
@@ -316,7 +334,7 @@ onMounted(() => {
           </span>
         </h1>
 
-        <div class="interests">
+        <div class="interests" ref="interests">
           <img :src="sasuke" alt="Gif of sasuke smiling" />
 
           <img :src="avengers" alt="Avengers Assemble Scene from Endgame" />
@@ -454,7 +472,10 @@ onMounted(() => {
           </div>
         </div>
 
-        <span>copyright @ 2021 Makanaokeakua Edwards All rights reserved</span>
+        <span
+          >copyright @ {{ year }} Makanaokeakua Edwards All rights
+          reserved</span
+        >
       </div>
     </PublicSplashSection>
   </Page>
@@ -734,6 +755,7 @@ onMounted(() => {
             img {
               width: 50%;
               height: auto;
+              aspect-ratio: 1;
             }
 
             .user-info {
