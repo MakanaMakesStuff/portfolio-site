@@ -20,7 +20,8 @@ import me2 from "@client/assets/images/me2.jpg"
 import jeff from "@client/assets/images/jeff.jpg"
 
 //Code Images
-import aws from "@client/assets/images/codeimages/aws.png"
+import react from "@client/assets/images/codeimages/react.png"
+import nextjs from "@client/assets/images/codeimages/nextjs.png"
 import heroku from "@client/assets/images/codeimages/heroku.png"
 import node from "@client/assets/images/codeimages/node.png"
 import trio from "@client/assets/images/codeimages/trio.png"
@@ -49,28 +50,33 @@ const submitted = ref(false)
 
 const codeImages = [
   {
-    src: aws,
-    alt: "AWS",
+    src: react,
+    alt: "React",
+  },
+  {
+    src: nextjs,
+    alt: "NextJS",
   },
   {
     src: heroku,
     alt: "Heroku",
   },
   {
+    src: vuejs,
+    alt: "VueJS",
+  },
+  {
     src: node,
     alt: "Node",
   },
-  {
-    src: trio,
-    alt: "Trio",
-  },
+
   {
     src: typeorm,
     alt: "TypeORM",
   },
   {
-    src: vuejs,
-    alt: "VueJS",
+    src: trio,
+    alt: "Trio",
   },
 ]
 
@@ -113,6 +119,7 @@ function submittedForm() {
 
 const gallery = ref()
 const interests = ref()
+const mounted = ref(false)
 
 onMounted(() => {
   const mosaic = useMosaic(gallery.value)
@@ -130,17 +137,15 @@ onMounted(() => {
 
   window.addEventListener("scroll", onScroll)
 
-  window.addEventListener("load", () => {
-    if (window.innerWidth < 800) {
-      inter.Sort(2, 4)
-    }
-  })
-
   window.addEventListener("resize", () => {
     if (window.innerWidth < 800) {
       inter.Sort(2, 4)
+    } else {
+      inter.Sort(3, 2)
     }
   })
+
+  mounted.value = true
 })
 
 function getYears() {
@@ -157,7 +162,7 @@ const year = date().get("year")
 </script>
 
 <template>
-  <Page class="index-page" id="home">
+  <Page class="index-page" :class="{ mounted: mounted }" id="home">
     <div class="info">
       <div class="left">
         <h1>Makanaokeakua Edwards, {{ getYears() }}</h1>
@@ -483,409 +488,414 @@ const year = date().get("year")
 
 <style lang="scss">
 .index-page {
-  width: 100%;
-  margin: auto;
-
-  .info {
-    @include flex(row, space-around, center);
-    gap: 2em;
+  &.mounted {
     width: 100%;
-    height: 100%;
-    max-height: max-content;
-    max-width: 1000px;
     margin: auto;
-    margin-top: 10em;
-    position: relative;
-    padding: 0 2em;
 
-    .left {
-      @include flex(column);
-      gap: 1em;
+    .info {
+      @include flex(row, space-around, center);
+      gap: 2em;
+      width: 100%;
       height: 100%;
-
-      h1 {
-        font-weight: 400;
-      }
-
-      h1,
-      h2 {
-        margin: 0;
-      }
-
-      h2 {
-        font-weight: 400;
-      }
-
-      h2,
-      span {
-        color: white;
-      }
-
-      .buttons {
-        @include flex(row);
-        gap: 0.5em;
-        height: 50px;
-
-        .public-navigation-link {
-          height: 100%;
-          aspect-ratio: 1;
-        }
-
-        .public-button {
-          height: 100%;
-
-          &:not(.social) {
-            background-color: rgba(40, 40, 40, 1);
-            padding: 1em 2em;
-
-            &:hover {
-              background-color: rgba(100, 100, 100, 1);
-            }
-          }
-
-          &.social {
-            box-sizing: border-box;
-            font-size: 1.2em;
-            padding: 0;
-            aspect-ratio: 1;
-            background-color: white;
-            color: rgba(40, 40, 40, 1);
-
-            &:hover {
-              background-color: rgba(40, 40, 40, 1);
-              color: white;
-            }
-          }
-        }
-      }
-    }
-
-    .right {
-      height: 100%;
-      width: max-content;
-      display: flex;
-
-      img {
-        height: 100%;
-        max-height: 200px;
-        border-radius: 5px;
-        box-shadow: -3px -3px 15px 8px rgba(0, 0, 0, 0.15);
-      }
-    }
-
-    @include mobile(900px) {
-      margin: 5em 0;
-      flex-direction: column-reverse;
-    }
-  }
-
-  .projects-section {
-    @include flex(column, center, center);
-    gap: 7em;
-    width: 100%;
-    height: 100%;
-    max-height: max-content;
-    max-width: 1300px;
-    margin: auto;
-    position: relative;
-
-    h1 {
-      color: white;
-    }
-
-    .public-project {
-      gap: 4em;
+      max-height: max-content;
+      max-width: 1000px;
+      margin: auto;
+      margin-top: 10em;
+      position: relative;
+      padding: 0 2em;
 
       .left {
         @include flex(column);
-        gap: 1.5em;
+        gap: 1em;
+        height: 100%;
 
+        h1 {
+          font-weight: 400;
+        }
+
+        h1,
         h2 {
           margin: 0;
+        }
+
+        h2 {
+          font-weight: 400;
+        }
+
+        h2,
+        span {
           color: white;
         }
 
-        .public-navigation-link {
-          text-decoration: none;
+        .buttons {
+          @include flex(row);
+          gap: 0.5em;
+          height: 50px;
+
+          .public-navigation-link {
+            height: 100%;
+            aspect-ratio: 1;
+          }
 
           .public-button {
-            @include flex(row, center, center);
-            gap: 0.75em;
-            background-color: rgba(40, 40, 40, 1);
-            width: max-content;
+            height: 100%;
 
-            &:hover {
-              background-color: rgba(100, 100, 100, 1);
+            &:not(.social) {
+              background-color: rgba(40, 40, 40, 1);
+              padding: 1em 2em;
+
+              &:hover {
+                background-color: rgba(100, 100, 100, 1);
+              }
             }
 
-            * {
-              white-space: nowrap;
+            &.social {
+              box-sizing: border-box;
+              font-size: 1.2em;
+              padding: 0;
+              aspect-ratio: 1;
+              background-color: white;
+              color: rgba(40, 40, 40, 1);
+
+              &:hover {
+                background-color: rgba(40, 40, 40, 1);
+                color: white;
+              }
             }
           }
         }
       }
 
       .right {
-        .video-container {
-          border-radius: 10px;
-          box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
-          overflow: hidden;
+        height: 100%;
+        width: max-content;
+        display: flex;
 
-          video {
-            width: 100%;
-            height: auto;
-          }
+        img {
+          height: 100%;
+          max-height: 200px;
+          border-radius: 5px;
+          box-shadow: -3px -3px 15px 8px rgba(0, 0, 0, 0.15);
         }
       }
 
-      &.owls {
-        .right {
-          .gallery {
-            width: 100%;
-          }
-        }
-      }
-
-      &.minecraft {
-        .right {
-          .public-image-map {
-            box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
-          }
-        }
-      }
-
-      &.typeout {
-        .left {
-          h2 {
-            height: 30px;
-          }
-        }
-
-        .right {
-          img {
-            width: 100%;
-            border-radius: 5px;
-            box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
-          }
-        }
+      @include mobile(900px) {
+        margin: 5em 0;
+        flex-direction: column-reverse;
       }
     }
 
-    @include mobile(900px) {
-      gap: 3em;
+    .projects-section {
+      @include flex(column, center, center);
+      gap: 7em;
+      width: 100%;
+      height: 100%;
+      max-height: max-content;
+      max-width: 1300px;
+      margin: auto;
+      position: relative;
+
+      h1 {
+        color: white;
+      }
 
       .public-project {
-        flex-direction: column;
-        gap: 1em;
-        padding: 0 2em;
-
-        .left,
-        .right {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .public-splash-section {
-    .middle {
-      @include flex(row, center, center);
-      flex-wrap: wrap;
-      gap: 2.5em;
-      padding: 2em;
-      background-color: white;
-
-      img {
-        width: 100%;
-        max-width: 250px;
-        height: auto;
-      }
-
-      @include mobile(500px) {
-        img {
-          max-width: unset;
-          width: 50%;
-        }
-      }
-    }
-
-    &.interests-splash {
-      .container {
-        background-color: white;
-        @include flex(column, center, center);
-        gap: 5em;
-        padding: 1em 2em;
-
-        .interests {
-          margin: 0 auto;
-          width: 100%;
-          max-width: 1320px;
-          margin: 0 auto;
-        }
-
-        .public-user-card {
-          height: 175px;
-          width: 100%;
-          max-width: 700px;
-          box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
-          padding: 1em;
-          @include flex(row, flex-start, center);
-          gap: 2em;
-          border-radius: 5px;
-
-          img {
-            border-radius: 50%;
-            height: 100%;
-            width: auto;
-            border: 4px solid rgb(132, 88, 179);
-            padding: 3px;
-          }
-
-          .user-info {
-            span {
-              color: #dda0dd;
-            }
-          }
-
-          @include mobile(550px) {
-            flex-direction: column;
-            height: max-content;
-            gap: 3em;
-
-            img {
-              width: 50%;
-              height: auto;
-              aspect-ratio: 1;
-            }
-
-            .user-info {
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
-
-    &.footer {
-      .middle {
-        @include flex(column, center, center);
         gap: 4em;
 
-        .overlay {
-          width: 50px;
-          height: 50px;
-          background-color: rgb(132, 88, 179);
-          -webkit-mask-image: url("../assets/images/logo.png");
-          mask-image: url("../assets/images/logo.png");
-          -webkit-mask-size: 100%;
-          mask-size: 100%;
-          -webkit-mask-repeat: no-repeat;
-          mask-repeat: no-repeat;
-          -webkit-mask-clip: border-box;
-          mask-clip: border-box;
+        .left {
+          @include flex(column);
+          gap: 1.5em;
+
+          h2 {
+            margin: 0;
+            color: white;
+          }
+
+          .public-navigation-link {
+            text-decoration: none;
+
+            .public-button {
+              @include flex(row, center, center);
+              gap: 0.75em;
+              background-color: rgba(40, 40, 40, 1);
+              width: max-content;
+
+              &:hover {
+                background-color: rgba(100, 100, 100, 1);
+              }
+
+              * {
+                white-space: nowrap;
+              }
+            }
+          }
         }
 
-        .footer-options {
-          @include flex(row, center, center);
-          width: 100%;
+        .right {
+          .video-container {
+            border-radius: 10px;
+            box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
 
+            video {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+
+        &.owls {
+          .right {
+            .gallery {
+              width: 100%;
+            }
+          }
+        }
+
+        &.minecraft {
+          .right {
+            .public-image-map {
+              box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
+            }
+          }
+        }
+
+        &.typeout {
           .left {
-            @include flex(column, flex-start, flex-end);
-            border-right: 2px solid lightgray;
-            width: 100%;
-            max-width: 100px;
+            h2 {
+              height: 30px;
+            }
           }
 
           .right {
-            @include flex(column, flex-start, flex-start);
-            width: 100%;
-            max-width: 100px;
+            img {
+              width: 100%;
+              border-radius: 5px;
+              box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
+            }
           }
+        }
+      }
+
+      @include mobile(900px) {
+        gap: 3em;
+
+        .public-project {
+          flex-direction: column;
+          gap: 1em;
+          padding: 0 2em;
 
           .left,
           .right {
-            padding: 2em;
-            gap: 1em;
+            width: 100%;
+          }
+        }
+      }
+    }
 
-            * {
-              text-decoration: none;
-              color: rgba(40, 40, 40, 1);
+    .public-splash-section {
+      .middle {
+        @include flex(row, center, center);
+        flex-wrap: wrap;
+        padding: 2em;
+        row-gap: 2em;
+        background-color: white;
+        width: 100%;
+        position: relative;
+
+        img {
+          display: block;
+          width: calc(100% / 7);
+          min-width: 150px;
+          max-height: 150px;
+          object-fit: contain;
+          padding: 0 0.5em;
+        }
+
+        @include mobile(1200px) {
+          img {
+            max-width: unset;
+            width: calc(100% / 2);
+            flex: 1;
+          }
+        }
+      }
+
+      &.interests-splash {
+        .container {
+          background-color: white;
+          @include flex(column, center, center);
+          gap: 5em;
+          padding: 1em 2em;
+
+          .public-user-card {
+            height: 175px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
+            padding: 1em;
+            @include flex(row, flex-start, center);
+            gap: 2em;
+            border-radius: 5px;
+
+            img {
+              border-radius: 50%;
+              height: 100%;
+              width: auto;
+              border: 4px solid rgb(132, 88, 179);
+              padding: 3px;
             }
+
+            .user-info {
+              span {
+                color: #dda0dd;
+              }
+            }
+
+            @include mobile(550px) {
+              flex-direction: column;
+              height: max-content;
+              gap: 3em;
+
+              img {
+                width: 50%;
+                height: auto;
+                aspect-ratio: 1;
+              }
+
+              .user-info {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+
+      &.footer {
+        .middle {
+          @include flex(column, center, center);
+          gap: 4em;
+
+          .overlay {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(132, 88, 179);
+            -webkit-mask-image: url("../assets/images/logo.png");
+            mask-image: url("../assets/images/logo.png");
+            -webkit-mask-size: 100%;
+            mask-size: 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-clip: border-box;
+            mask-clip: border-box;
+          }
+
+          .footer-options {
+            @include flex(row, center, center);
+            width: 100%;
+
+            .left {
+              @include flex(column, flex-start, flex-end);
+              border-right: 2px solid lightgray;
+              width: 100%;
+              max-width: 100px;
+            }
+
+            .right {
+              @include flex(column, flex-start, flex-start);
+              width: 100%;
+              max-width: 100px;
+            }
+
+            .left,
+            .right {
+              padding: 2em;
+              gap: 1em;
+
+              * {
+                text-decoration: none;
+                color: rgba(40, 40, 40, 1);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .contact {
+      @include flex(column, center, center);
+      gap: 5em;
+      padding: 2em;
+
+      h1 {
+        color: white;
+      }
+
+      form {
+        @include flex(column, center, center);
+        gap: 1em;
+        padding: 2em;
+        border-radius: 5px;
+        background-color: white;
+        width: 100%;
+        max-width: 400px;
+        aspect-ratio: 0.8;
+        box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
+
+        h2 {
+          transition: all 0.5s ease-in-out;
+
+          &:not(.submitted) {
+            position: absolute;
+            height: 0px;
+            opacity: 0;
+          }
+          &.submitted {
+            position: relative;
+            height: 30px;
+            opacity: 1;
+          }
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          max-width: 100%;
+          min-width: 100%;
+          border: none;
+          border-bottom: 3px solid rgb(132, 88, 179);
+          border-radius: 5px;
+          box-shadow: -2px -2px 10px 2px rgba(0, 0, 0, 0.05);
+          padding: 0.5em;
+          min-height: 50px;
+        }
+
+        input {
+          height: 50px;
+        }
+
+        textarea {
+          height: 200px;
+        }
+
+        .public-button {
+          @include flex(row, center, center);
+          gap: 1em;
+          width: max-content;
+          padding: 1em 2em;
+          background-color: rgba(40, 40, 40, 1);
+          align-self: flex-start;
+
+          &:hover {
+            background-color: rgb(132, 88, 179);
           }
         }
       }
     }
   }
 
-  .contact {
-    @include flex(column, center, center);
-    gap: 5em;
-    padding: 2em;
-
-    h1 {
-      color: white;
-    }
-
-    form {
-      @include flex(column, center, center);
-      gap: 1em;
-      padding: 2em;
-      border-radius: 5px;
-      background-color: white;
-      width: 100%;
-      max-width: 400px;
-      aspect-ratio: 0.8;
-      box-shadow: -3px -3px 15px 2px rgba(0, 0, 0, 0.15);
-
-      h2 {
-        transition: all 0.5s ease-in-out;
-
-        &:not(.submitted) {
-          position: absolute;
-          height: 0px;
-          opacity: 0;
-        }
-        &.submitted {
-          position: relative;
-          height: 30px;
-          opacity: 1;
-        }
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        max-width: 100%;
-        min-width: 100%;
-        border: none;
-        border-bottom: 3px solid rgb(132, 88, 179);
-        border-radius: 5px;
-        box-shadow: -2px -2px 10px 2px rgba(0, 0, 0, 0.05);
-        padding: 0.5em;
-        min-height: 50px;
-      }
-
-      input {
-        height: 50px;
-      }
-
-      textarea {
-        height: 200px;
-      }
-
-      .public-button {
-        @include flex(row, center, center);
-        gap: 1em;
-        width: max-content;
-        padding: 1em 2em;
-        background-color: rgba(40, 40, 40, 1);
-        align-self: flex-start;
-
-        &:hover {
-          background-color: rgb(132, 88, 179);
-        }
-      }
-    }
+  &:not(.mounted) {
+    display: none;
   }
 }
 </style>
